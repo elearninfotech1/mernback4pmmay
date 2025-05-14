@@ -1,5 +1,5 @@
 let express = require("express");
-let bcrypt = require("bcrypt");
+const bcrypt = require('bcryptjs');
 let jwt = require("jsonwebtoken");
 let Signup = require("../model/signupModel");
 const loginMiddleware = require("../middleware/loginMiddleware");
