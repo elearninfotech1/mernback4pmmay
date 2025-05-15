@@ -1,6 +1,6 @@
-let express = require("express");
+const express = require("express");
 require("./dbconfig/dbconfig");
-let cors = require("cors");
+const cors = require("cors");
 
 const studentRouting = require("./routing/studentRouting");
 // const signupRouting = require("./routing/signupRouting");
@@ -10,14 +10,15 @@ const appointmentRouting = require("./routing/appointmentRouting");
 const contactusRouting = require("./routing/contactusRouting");
 const doctorRouting = require("./routing/doctorRouting");
 
-let app = express();
-const PORT = process.env.PORT || 3000; // ✅ ADD THIS LINE
+const app = express();
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
 
+// ✅ Add this guaranteed working root route
 app.get('/', (req, res) => {
-  res.send('Welcome to the API! ✅');
+  res.send('✅ API is live — root path working!');
 });
 
 app.use("/", studentRouting);
@@ -28,12 +29,6 @@ app.use("/", appointmentRouting);
 app.use("/", contactusRouting);
 app.use("/", doctorRouting);
 
-// Optional: catch-all 404 for unknown routes
-app.use((req, res) => {
-  res.status(404).send("404 Not Found: " + req.originalUrl);
-});
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-
