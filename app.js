@@ -20,7 +20,6 @@ app.get("/", (req, res) => {
 
 app.use("/", treatmentRouting);
 app.use("/", offerRouting);
-app.use("/", appointmentRouting);
 app.use("/", contactusRouting);
 app.use("/", doctorRouting);
 
