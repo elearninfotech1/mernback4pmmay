@@ -4,7 +4,6 @@ let cors = require("cors");
 
 const treatmentRouting = require("./routing/treatmentRouting");
 const offerRouting = require("./routing/offerRouting");
-const appointmentRouting = require("./routing/appointmentRouting");
 const contactusRouting = require("./routing/contactusRouting");
 const doctorRouting = require("./routing/doctorRouting");
 
