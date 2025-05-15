@@ -16,6 +16,10 @@ const PORT = process.env.PORT || 3000; // ✅ ADD THIS LINE
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Welcome to the API! ✅');
+});
+
 app.use("/", studentRouting);
 // app.use("/", signupRouting);
 app.use("/", treatmentRouting);
