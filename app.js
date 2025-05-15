@@ -20,4 +20,8 @@ app.use("/", appointmentRouting);
 app.use("/", contactusRouting);
 app.use("/", doctorRouting);
 
-app.listen(4000, () => console.log("Server is started on 4000 port"));
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
